@@ -1,0 +1,16 @@
+sources:
+  - name: access-s2-hc300
+    type: MFDataset
+    args:
+      path: /g/data/ux62/access-s2/reanalysis/ocean/hc300/do_hc300_*.nc
+      var: hc300
+      concat_dim: 'time_counter'
+    chunks:
+      - time_counter: 1
+        y: -1
+        x: -1
+    operations:
+      only:
+        - TimeMean
+        - Climatology
+        - ClimatologyClimtas

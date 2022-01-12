@@ -1,0 +1,29 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: config_schema.yaml
+type: object
+properties:
+  sources:
+    description: List of all sources to process
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        args:
+          type: object
+        chunks:
+          type: array
+          items:
+            type: object
+            additional_properties:
+              type: integer
+        operations:
+          type: object
+          properties:
+            only:
+              type: array
+              items:
+                type: string

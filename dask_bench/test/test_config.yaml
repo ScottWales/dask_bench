@@ -1,0 +1,15 @@
+sources:
+  - name: random sample
+    type: Random
+    args:
+      shape: [365, 100, 100]
+    chunks:
+      - time: 1
+        lat: -1
+        lon: -1
+      - time: -1
+        lat: 50
+        lon: 50
+    operations:
+      only:
+        - TimeMean
