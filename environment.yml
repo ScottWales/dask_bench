@@ -1,0 +1,11 @@
+name: dask_bench
+channels:
+  - conda-forge
+  - coecms
+dependencies:
+  - python
+  - dask
+  - xarray
+  - climtas
+  - pyyaml
+  - pytest
