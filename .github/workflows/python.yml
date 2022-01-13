@@ -1,7 +1,7 @@
 name: python
 on: [push]
 jobs:
-  black:
+  pytest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

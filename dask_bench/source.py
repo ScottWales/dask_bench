@@ -40,6 +40,7 @@ class Source:
             "chunks": [self.chunks[d] for d in da.dims]
             if self.chunks != "auto"
             else self.chunks,
+            "file_chunks": da.encoding.get("chunks", None),
             "nbytes": da.nbytes,
         }
 
