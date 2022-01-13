@@ -140,6 +140,12 @@ class MFDataset(Source):
 
     def load(self) -> xarray.DataArray:
         ds = xarray.open_mfdataset(
-            self.path, chunks=self.chunks, combine="nested", concat_dim=self.concat_dim
+            self.path,
+            chunks=self.chunks,
+            combine="nested",
+            concat_dim=self.concat_dim,
+            data_vars="minimal",
+            coords="minimal",
+            compat="override",
         )
         return ds[self.var]
