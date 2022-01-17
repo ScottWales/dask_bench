@@ -11,5 +11,7 @@
 module use /g/data3/hh5/public/modules
 module load conda/analysis3
 
+export DASK_TEMPORARY_DIRECTORY=$TMPDIR
+
 set -eu
 python -m dask_bench.main --config runs/access-s/config.yaml --output runs/access-s/output.csv
