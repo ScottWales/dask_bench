@@ -6,14 +6,14 @@ sources:
       var: hc300
       concat_dim: 'time_counter'
     chunks:
-        #- time_counter: -1
-        #  y: 215
-        #  x: 304
+      - time_counter: -1
+        y: 215
+        x: 304
       - time_counter: 16
         y: -1
         x: -1
     operations:
       only:
-        # - TimeMean
-        - Climatology
-        # - ClimatologyClimtas
+        - TimeMean
+        # - Climatology
+        - ClimatologyClimtas
