@@ -6,6 +6,7 @@ from datetime import datetime
 import typing as T
 from functools import lru_cache
 import tempfile
+import cf_xarray
 
 
 class Operation:
@@ -51,14 +52,14 @@ def all_operations() -> T.List[Operation]:
 
 class TimeMean(Operation):
     def run(self, da: xarray.DataArray) -> xarray.DataArray:
-        return da.mean("time")
+        return da.mean(da.cf["T"].name)
 
 
 class Climatology(Operation):
     def run(self, da: xarray.DataArray) -> xarray.DataArray:
-        return da.groupby("time.dayofyear").mean()
+        return da.groupby(f"{da.cf['T'].name}.dayofyear").mean()
 
 
 class ClimatologyClimtas(Operation):
     def run(self, da: xarray.DataArray) -> xarray.DataArray:
-        return climtas.blocked_groupby(da, time="dayofyear").mean()
+        return climtas.blocked_groupby(da, {da.cf["T"].name: "dayofyear"}).mean()
