@@ -2,7 +2,7 @@ sources:
   - name: access-s2-hc300
     type: MFDataset
     args:
-      path: /g/data/ux62/access-s2/reanalysis/ocean/hc300/do_hc300_*.nc
+      path: /g/data/ux62/access-s2/reanalysis/ocean/hc300/do_hc300_19*.nc
       var: hc300
       concat_dim: 'time_counter'
     chunks:
