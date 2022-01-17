@@ -15,6 +15,6 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-for n in 8 32 48; do
+for n in 8 16 32 48; do
     qsub -l "ncpus=$n,mem=$(( n * 4 ))gb" run.pbs
 done
